@@ -11,7 +11,7 @@ import UIKit
 
 class AlbumListViewModel: NSObject {
     
-    let musicGenre = "Hip Hop"
+    let musicGenre = "HipHop"
     
     let cellIdentifier = NSStringFromClass(AlbumViewCell.classForCoder())
     var tableView: UITableView? {

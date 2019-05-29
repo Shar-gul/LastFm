@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		684EF90C229EA018005D739D /* AlbumsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EF90B229EA018005D739D /* AlbumsResponse.swift */; };
 		68A80C23229DDCF200835494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A80C22229DDCF200835494 /* AppDelegate.swift */; };
 		68A80C2A229DDCF500835494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A80C29229DDCF500835494 /* Assets.xcassets */; };
 		68A80C2D229DDCF500835494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A80C2B229DDCF500835494 /* LaunchScreen.storyboard */; };
@@ -32,6 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		684EF90B229EA018005D739D /* AlbumsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsResponse.swift; sourceTree = "<group>"; };
 		68A80C1F229DDCF200835494 /* LastFm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastFm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A80C22229DDCF200835494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68A80C29229DDCF500835494 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				68A80C4F229DE0E200835494 /* Albums.swift */,
+				684EF90B229EA018005D739D /* AlbumsResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				68A80C57229DE91200835494 /* AlbumsDatasource.swift in Sources */,
 				68A80C23229DDCF200835494 /* AppDelegate.swift in Sources */,
 				68A80C5B229DFB3100835494 /* AlbumCellViewModel.swift in Sources */,
+				684EF90C229EA018005D739D /* AlbumsResponse.swift in Sources */,
 				68A80C48229DDDC100835494 /* AlbumListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

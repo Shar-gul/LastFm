@@ -24,6 +24,6 @@ class AlbumListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .blue
+        viewModel.fetchData()
     }
 }

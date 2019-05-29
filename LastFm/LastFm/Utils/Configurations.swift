@@ -12,7 +12,7 @@ struct Configurations {
     static let endpoint = "https://ws.audioscrobbler.com/2.0/?"
     
     static let APP_ID_KEY = "app_id"
-    static let APP_ID_VALUE = "729e630eee1a2ee3ddf1c03e2a1e1cad"
+    static let APP_ID_VALUE = "e74bc5f2d42bd15af8b0aa7b54420aeb"
     
     static let FORMAT_KEY = "format"
     static let FORMAT_VALUE = "json"
