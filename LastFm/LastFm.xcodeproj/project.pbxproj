@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		684EF90C229EA018005D739D /* AlbumsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EF90B229EA018005D739D /* AlbumsResponse.swift */; };
+		684EF923229F2135005D739D /* AlbumInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EF922229F2135005D739D /* AlbumInfoResponse.swift */; };
+		684EF925229F2337005D739D /* AlbumInfoDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EF924229F2337005D739D /* AlbumInfoDatasource.swift */; };
+		684EF927229F26E0005D739D /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EF926229F26E0005D739D /* ErrorResponse.swift */; };
 		68A80C23229DDCF200835494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A80C22229DDCF200835494 /* AppDelegate.swift */; };
 		68A80C2A229DDCF500835494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A80C29229DDCF500835494 /* Assets.xcassets */; };
 		68A80C2D229DDCF500835494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A80C2B229DDCF500835494 /* LaunchScreen.storyboard */; };
@@ -15,7 +18,6 @@
 		68A80C46229DDDAF00835494 /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A80C45229DDDAF00835494 /* AlbumListViewController.swift */; };
 		68A80C48229DDDC100835494 /* AlbumListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A80C47229DDDC100835494 /* AlbumListViewModel.swift */; };
 		68A80C4B229DE01E00835494 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A80C4A229DE01E00835494 /* NetworkManager.swift */; };
-		68A80C50229DE0E200835494 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A80C4F229DE0E200835494 /* Albums.swift */; };
 		68A80C52229DE65200835494 /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A80C51229DE65200835494 /* Configurations.swift */; };
 		68A80C57229DE91200835494 /* AlbumsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A80C56229DE91200835494 /* AlbumsDatasource.swift */; };
 		68A80C59229DF7F700835494 /* AlbumViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A80C58229DF7F700835494 /* AlbumViewCell.swift */; };
@@ -34,6 +36,9 @@
 
 /* Begin PBXFileReference section */
 		684EF90B229EA018005D739D /* AlbumsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsResponse.swift; sourceTree = "<group>"; };
+		684EF922229F2135005D739D /* AlbumInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoResponse.swift; sourceTree = "<group>"; };
+		684EF924229F2337005D739D /* AlbumInfoDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoDatasource.swift; sourceTree = "<group>"; };
+		684EF926229F26E0005D739D /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		68A80C1F229DDCF200835494 /* LastFm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastFm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A80C22229DDCF200835494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68A80C29229DDCF500835494 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,7 +50,6 @@
 		68A80C45229DDDAF00835494 /* AlbumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
 		68A80C47229DDDC100835494 /* AlbumListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewModel.swift; sourceTree = "<group>"; };
 		68A80C4A229DE01E00835494 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		68A80C4F229DE0E200835494 /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
 		68A80C51229DE65200835494 /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		68A80C56229DE91200835494 /* AlbumsDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsDatasource.swift; sourceTree = "<group>"; };
 		68A80C58229DF7F700835494 /* AlbumViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewCell.swift; sourceTree = "<group>"; };
@@ -95,8 +99,8 @@
 				68A80C53229DE7E100835494 /* Datasource */,
 				68A80C4C229DE05E00835494 /* Model */,
 				68A80C42229DDD1F00835494 /* Utils */,
-				68A80C44229DDD7E00835494 /* AlbumDetail */,
 				68A80C43229DDD2700835494 /* AlbumList */,
+				68A80C44229DDD7E00835494 /* AlbumDetail */,
 				68A80C49229DDECC00835494 /* AlbumCell */,
 				68A80C29229DDCF500835494 /* Assets.xcassets */,
 				68A80C2B229DDCF500835494 /* LaunchScreen.storyboard */,
@@ -151,8 +155,9 @@
 		68A80C4C229DE05E00835494 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				68A80C4F229DE0E200835494 /* Albums.swift */,
 				684EF90B229EA018005D739D /* AlbumsResponse.swift */,
+				684EF922229F2135005D739D /* AlbumInfoResponse.swift */,
+				684EF926229F26E0005D739D /* ErrorResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				68A80C56229DE91200835494 /* AlbumsDatasource.swift */,
+				684EF924229F2337005D739D /* AlbumInfoDatasource.swift */,
 			);
 			path = Datasource;
 			sourceTree = "<group>";
@@ -265,15 +271,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68A80C50229DE0E200835494 /* Albums.swift in Sources */,
 				68A80C4B229DE01E00835494 /* NetworkManager.swift in Sources */,
 				68A80C59229DF7F700835494 /* AlbumViewCell.swift in Sources */,
 				68A80C52229DE65200835494 /* Configurations.swift in Sources */,
+				684EF927229F26E0005D739D /* ErrorResponse.swift in Sources */,
 				68A80C46229DDDAF00835494 /* AlbumListViewController.swift in Sources */,
 				68A80C57229DE91200835494 /* AlbumsDatasource.swift in Sources */,
 				68A80C23229DDCF200835494 /* AppDelegate.swift in Sources */,
+				684EF925229F2337005D739D /* AlbumInfoDatasource.swift in Sources */,
 				68A80C5B229DFB3100835494 /* AlbumCellViewModel.swift in Sources */,
 				684EF90C229EA018005D739D /* AlbumsResponse.swift in Sources */,
+				684EF923229F2135005D739D /* AlbumInfoResponse.swift in Sources */,
 				68A80C48229DDDC100835494 /* AlbumListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

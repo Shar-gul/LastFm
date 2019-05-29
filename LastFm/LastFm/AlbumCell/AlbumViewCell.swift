@@ -17,50 +17,27 @@ class AlbumViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectionStyle = .none
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor.white
         
-//        backgroundButton.backgroundColor = JMaterialStyle.Colors.white
-//        backgroundButton.layer.cornerRadius = 0
-//        contentView.addSubview(backgroundButton)
-//        backgroundButton.translatesAutoresizingMaskIntoConstraints = false
-//        backgroundButton.jaTopAnchor.constraint(equalTo: contentView.jaTopAnchor)
-//        backgroundButton.jaLeadingAnchor.constraint(equalTo: contentView.jaLeadingAnchor)
-//        backgroundButton.jaTrailingAnchor.constraint(equalTo: contentView.jaTrailingAnchor)
-//        backgroundButton.jaHeightAnchor.constraint(greaterThanOrEqualToConstant: 0)
-//        
-//        orderNoLabel.textColor = JMaterialStyle.Colors.gray800
-//        orderNoLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-//        orderNoLabel.text = "orderNoLabel"
-//        backgroundButton.addSubview(orderNoLabel)
-//        orderNoLabel.translatesAutoresizingMaskIntoConstraints = false
-//        orderNoLabel.jaTopAnchor.constraint(equalTo: backgroundButton.jaTopAnchor, constant: 10)
-//        orderNoLabel.jaLeadingAnchor.constraint(equalTo: backgroundButton.jaLeadingAnchor, constant: 20)
-//        orderNoLabel.jaTrailingAnchor.constraint(equalTo: backgroundButton.jaTrailingAnchor, constant: -20)
-//        orderNoLabel.jaHeightAnchor.constraint(greaterThanOrEqualToConstant: 0)
-//        
-//        dateLabel.textColor = JMaterialStyle.Colors.gray500
-//        dateLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-//        dateLabel.text = "dateLabel"
-//        backgroundButton.addSubview(dateLabel)
-//        dateLabel.translatesAutoresizingMaskIntoConstraints = false
-//        dateLabel.jaTopAnchor.constraint(equalTo: orderNoLabel.jaBottomAnchor, constant: 5)
-//        dateLabel.jaLeadingAnchor.constraint(equalTo: backgroundButton.jaLeadingAnchor, constant: 20)
-//        dateLabel.jaTrailingAnchor.constraint(equalTo: backgroundButton.jaTrailingAnchor, constant: -20)
-//        dateLabel.jaHeightAnchor.constraint(greaterThanOrEqualToConstant: 0)
-//        
-//        priceLabel.textColor = JMaterialStyle.Colors.gray500
-//        priceLabel.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-//        priceLabel.text = "priceLabel"
-//        backgroundButton.addSubview(priceLabel)
-//        priceLabel.translatesAutoresizingMaskIntoConstraints = false
-//        priceLabel.jaTopAnchor.constraint(equalTo: dateLabel.jaBottomAnchor, constant: 5)
-//        priceLabel.jaLeadingAnchor.constraint(equalTo: backgroundButton.jaLeadingAnchor, constant: 20)
-//        priceLabel.jaTrailingAnchor.constraint(equalTo: backgroundButton.jaTrailingAnchor, constant: -20)
-//        priceLabel.jaHeightAnchor.constraint(greaterThanOrEqualToConstant: 0)
-//        
-//        backgroundButton.jaBottomAnchor.constraint(equalTo: priceLabel.jaBottomAnchor, constant: 10)
-//        
-//        contentView.jaBottomAnchor.constraint(equalTo: backgroundButton.jaBottomAnchor, constant: 10)
+        albumImage.image = UIImage(named: "")
+        addSubview(albumImage)
+        albumImage.translatesAutoresizingMaskIntoConstraints = false
+        let albumImageTopConstraint = albumImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10)
+        let albumImageLeadingConstraint = albumImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10)
+        let albumImageWidthConstraint = albumImage.widthAnchor.constraint(equalToConstant: 50)
+        let albumImageHeightConstraint = albumImage.heightAnchor.constraint(equalToConstant: 50)
+        let albumImageBottomConstraint = albumImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10)
+        
+        contentView.addConstraints([albumImageTopConstraint, albumImageLeadingConstraint, albumImageWidthConstraint, albumImageHeightConstraint, albumImageBottomConstraint])
+        
+        albumLabel.text = ""
+        contentView.addSubview(albumLabel)
+        albumLabel.translatesAutoresizingMaskIntoConstraints = false
+        let albumLabelLeadingConstraint = albumLabel.leadingAnchor.constraint(equalTo: albumImage.leadingAnchor, constant: 10)
+        let albumLabelTrailingConstraint = albumLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10)
+        let albumLabelCenterYConstraint = albumLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        
+        contentView.addConstraints([albumLabelLeadingConstraint, albumLabelTrailingConstraint, albumLabelCenterYConstraint])
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -19,14 +19,20 @@ struct Albums: Codable {
 
 // MARK: - Album
 struct Album: Codable {
-    let name, mbid: String
+    let name: String
+    let mbid: String
     let url: String
-    let artist: Artist
+    let artist: Artist?
     let image: [Image]
-    let attr: Attr
+    let attr: Attr?
+    let listeners: String?
+    let playcount: String?
+    let tracks: Tracks?
+    let tags: Tags?
+    let wiki: Wiki?
     
     enum CodingKeys: String, CodingKey {
-        case name, mbid, url, artist, image
+        case name, mbid, url, artist, image, listeners, playcount, tracks, tags, wiki
         case attr = "@attr"
     }
 }

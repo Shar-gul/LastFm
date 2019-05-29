@@ -11,8 +11,8 @@ import Foundation
 struct Configurations {
     static let endpoint = "https://ws.audioscrobbler.com/2.0/?"
     
-    static let APP_ID_KEY = "app_id"
-    static let APP_ID_VALUE = "e74bc5f2d42bd15af8b0aa7b54420aeb"
+    static let API_KEY = "api_key"
+    static let API_KEY_VALUE = "e74bc5f2d42bd15af8b0aa7b54420aeb"
     
     static let FORMAT_KEY = "format"
     static let FORMAT_VALUE = "json"
