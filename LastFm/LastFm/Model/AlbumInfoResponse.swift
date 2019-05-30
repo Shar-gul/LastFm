@@ -9,16 +9,28 @@
 import Foundation
 
 struct AlbumInfoResponse: Codable {
-    let album: Album
+    let album: AlbumInfo
+}
+
+struct AlbumInfo: Codable {
+    let name: String
+    let artist: String
+    let url: String
+    let image: [Image]
+    let listeners: String
+    let playcount: String
+    let tracks: Tracks
+    let tags: Tags?
+    let wiki: Wiki?
 }
 
 struct Tags: Codable {
-    let tag: [Tag]
+    let tag: [Tag]?
 }
 
 struct Tag: Codable {
-    let name: String
-    let url: String
+    let name: String?
+    let url: String?
 }
 
 struct Tracks: Codable {
@@ -31,13 +43,19 @@ struct Track: Codable {
     let duration: String
     let attr: Attr
     let streamable: Streamable
-    let artist: Artist
+    let artist: ArtistInfo
     
     enum CodingKeys: String, CodingKey {
         case name, url, duration
         case attr = "@attr"
         case streamable, artist
     }
+}
+
+struct ArtistInfo: Codable {
+    let name: String
+    let mbid: String
+    let url: String
 }
 
 struct Streamable: Codable {
@@ -50,5 +68,7 @@ struct Streamable: Codable {
 }
 
 struct Wiki: Codable {
-    let published, summary, content: String
+    let published: String?
+    let summary: String?
+    let content: String?
 }

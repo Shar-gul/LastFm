@@ -38,8 +38,8 @@ class AlbumListViewController: UIViewController {
         view.addConstraints([tableViewTopConstraint, tableViewLeadingConstraint, tableViewTrailingConstraint, tableViewBottomConstraint])
         
         viewModel.onAlbumSelectionEvent = { [weak self] album in
-            print(album.name)
-            //self?.myNavigation?.openMyOrderDetails(order.orderNo)
+            let detailController = AlbumDetailViewController.init()
+            self?.navigationController?.pushViewController(detailController, animated: true)
         }
     }
     

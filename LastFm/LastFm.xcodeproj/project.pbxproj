@@ -11,6 +11,8 @@
 		684EF923229F2135005D739D /* AlbumInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EF922229F2135005D739D /* AlbumInfoResponse.swift */; };
 		684EF925229F2337005D739D /* AlbumInfoDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EF924229F2337005D739D /* AlbumInfoDatasource.swift */; };
 		684EF927229F26E0005D739D /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EF926229F26E0005D739D /* ErrorResponse.swift */; };
+		684EF930229FCB1C005D739D /* AlbumDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EF92F229FCB1C005D739D /* AlbumDetailViewController.swift */; };
+		684EF932229FCB23005D739D /* AlbumDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684EF931229FCB23005D739D /* AlbumDetailViewModel.swift */; };
 		68A80C23229DDCF200835494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A80C22229DDCF200835494 /* AppDelegate.swift */; };
 		68A80C2A229DDCF500835494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68A80C29229DDCF500835494 /* Assets.xcassets */; };
 		68A80C2D229DDCF500835494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68A80C2B229DDCF500835494 /* LaunchScreen.storyboard */; };
@@ -39,6 +41,8 @@
 		684EF922229F2135005D739D /* AlbumInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoResponse.swift; sourceTree = "<group>"; };
 		684EF924229F2337005D739D /* AlbumInfoDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumInfoDatasource.swift; sourceTree = "<group>"; };
 		684EF926229F26E0005D739D /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		684EF92F229FCB1C005D739D /* AlbumDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewController.swift; sourceTree = "<group>"; };
+		684EF931229FCB23005D739D /* AlbumDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumDetailViewModel.swift; sourceTree = "<group>"; };
 		68A80C1F229DDCF200835494 /* LastFm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastFm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68A80C22229DDCF200835494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68A80C29229DDCF500835494 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +78,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		684EF92E229FCAA1005D739D /* AlbumDetail */ = {
+			isa = PBXGroup;
+			children = (
+				684EF92F229FCB1C005D739D /* AlbumDetailViewController.swift */,
+				684EF931229FCB23005D739D /* AlbumDetailViewModel.swift */,
+			);
+			path = AlbumDetail;
+			sourceTree = "<group>";
+		};
 		68A80C16229DDCF200835494 = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +113,7 @@
 				68A80C4C229DE05E00835494 /* Model */,
 				68A80C42229DDD1F00835494 /* Utils */,
 				68A80C43229DDD2700835494 /* AlbumList */,
-				68A80C44229DDD7E00835494 /* AlbumDetail */,
+				684EF92E229FCAA1005D739D /* AlbumDetail */,
 				68A80C49229DDECC00835494 /* AlbumCell */,
 				68A80C29229DDCF500835494 /* Assets.xcassets */,
 				68A80C2B229DDCF500835494 /* LaunchScreen.storyboard */,
@@ -134,13 +147,6 @@
 				68A80C47229DDDC100835494 /* AlbumListViewModel.swift */,
 			);
 			path = AlbumList;
-			sourceTree = "<group>";
-		};
-		68A80C44229DDD7E00835494 /* AlbumDetail */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AlbumDetail;
 			sourceTree = "<group>";
 		};
 		68A80C49229DDECC00835494 /* AlbumCell */ = {
@@ -278,6 +284,8 @@
 				68A80C46229DDDAF00835494 /* AlbumListViewController.swift in Sources */,
 				68A80C57229DE91200835494 /* AlbumsDatasource.swift in Sources */,
 				68A80C23229DDCF200835494 /* AppDelegate.swift in Sources */,
+				684EF932229FCB23005D739D /* AlbumDetailViewModel.swift in Sources */,
+				684EF930229FCB1C005D739D /* AlbumDetailViewController.swift in Sources */,
 				684EF925229F2337005D739D /* AlbumInfoDatasource.swift in Sources */,
 				68A80C5B229DFB3100835494 /* AlbumCellViewModel.swift in Sources */,
 				684EF90C229EA018005D739D /* AlbumsResponse.swift in Sources */,

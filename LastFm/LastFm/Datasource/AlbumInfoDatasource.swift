@@ -11,30 +11,43 @@ import Foundation
 class AlbumInfoDatasource {
     
     static private let METHOD_KEY = "method"
-    static private let TAG_KEY = "tag"
-    static private let LIMIT_KEY = "limit"
+    static private let ARTIST_KEY = "artist"
+    static private let ALBUM_KEY = "album"
     
     class func requestAlbumInfo(artistName: String,
                                 albumName: String,
-                                success: @escaping (_ success: Album) -> Void,
+                                success: @escaping (_ success: AlbumInfo) -> Void,
                                 failure: @escaping (String) -> Void) {
         
-        guard let urlComp = URLComponents(string: "https://ws.audioscrobbler.com/2.0/?method=album.getinfo&api_key=e74bc5f2d42bd15af8b0aa7b54420aeb&artist=CalvinHarris&album=FunkWavBouncesVol.1&format=json") else {
-            failure("")
+        let queryItems = [URLQueryItem.init(name: Configurations.API_KEY, value: Configurations.API_KEY_VALUE),
+                          URLQueryItem.init(name: METHOD_KEY, value: "album.getinfo"),
+                          URLQueryItem.init(name: ARTIST_KEY, value: artistName),
+                          URLQueryItem.init(name: ALBUM_KEY, value: albumName),
+                          URLQueryItem.init(name: Configurations.FORMAT_KEY, value: Configurations.FORMAT_VALUE)]
+        
+        guard var urlComp = URLComponents(string: Configurations.endpoint) else {
+            failure("Unable to create URL")
             return
         }
+        urlComp.queryItems = queryItems
         
         NetworkManager.requestURL(url: urlComp, parameters: [:], success: { response in
             do {
+
                 let string1 = String(data: response as! Data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
                 print(string1)
-                
+
                 let decoder = JSONDecoder()
-                let albumsJSON = try decoder.decode(AlbumInfoResponse.self, from: response as! Data)
-                success(albumsJSON.album)
-            } catch let jsonErr {
-                print(jsonErr)
-                failure("Error \(jsonErr)")
+                let albumJSON = try decoder.decode(AlbumInfoResponse.self, from: response as! Data)
+                success(albumJSON.album)
+            } catch _ {
+                do {
+                    let decoder = JSONDecoder()
+                    let error = try decoder.decode(ErrorResponse.self, from: response as! Data)
+                    failure(error.message)
+                } catch let jsonErr {
+                    failure("Error \(jsonErr)")
+                }
             }
         }) { (error) in
             failure("Error making request")
