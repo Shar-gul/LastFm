@@ -30,7 +30,7 @@ class AlbumsDatasource {
         }
         urlComp.queryItems = queryItems
         
-        NetworkManager.requestURL(url: urlComp, parameters: [:], success: { response in
+        NetworkManager.requestURL(url: urlComp, success: { response in
             do {
                 let decoder = JSONDecoder()
                 let albumsJSON = try decoder.decode(AlbumsResponse.self, from: response as! Data)

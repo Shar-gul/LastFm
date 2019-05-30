@@ -16,4 +16,6 @@ struct Configurations {
     
     static let FORMAT_KEY = "format"
     static let FORMAT_VALUE = "json"
+    
+    static let MUSIC_GENRE = "Hip Hop"
 }

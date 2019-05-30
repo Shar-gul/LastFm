@@ -11,12 +11,10 @@ import UIKit
 
 class AlbumListViewModel: NSObject {
     
-    let musicGenre = "Hip Hop"
-    
-    let cellIdentifier = NSStringFromClass(AlbumViewCell.classForCoder())
+    let cellIdentifier = "cell"
     var tableView: UITableView? {
         didSet {
-            tableView?.register(AlbumViewCell.classForCoder(), forCellReuseIdentifier: cellIdentifier)
+            tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: cellIdentifier)
             tableView?.dataSource = self
             tableView?.delegate = self
             tableView?.separatorStyle = .none
@@ -26,12 +24,11 @@ class AlbumListViewModel: NSObject {
     }
     
     var albumList: [Album] = []
-    var albumsViewModel: [Int: AlbumCellViewModel] = [:]
     var onAlbumSelectionEvent: ((Album)->Void)?
     
     func fetchData() {
         
-        AlbumsDatasource.requestTopAlbuns(musicGenre: musicGenre, success: { [weak self] result in
+        AlbumsDatasource.requestTopAlbuns(musicGenre: Configurations.MUSIC_GENRE, success: { [weak self] result in
 
             self?.albumList = result
             self?.loadViews()
@@ -43,8 +40,8 @@ class AlbumListViewModel: NSObject {
     }
     
     func loadViews() {
-        DispatchQueue.main.async {
-            self.tableView?.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView?.reloadData()
         }
     }
 }
@@ -61,36 +58,26 @@ extension AlbumListViewModel: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell: UITableViewCell = {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") else {
-                return UITableViewCell(style: .default, reuseIdentifier: "cell")
-            }
-            return cell
-        }()
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+            
         cell.imageView?.image = nil
         cell.textLabel?.text = albumList[indexPath.row].name
         
-        if let imageValue = albumList[indexPath.row].image.first?.text, let imageURL = URLComponents(string: imageValue) {
-            NetworkManager.requestURL(url: imageURL, success: { (dataResult) in
+        if let imageValue = albumList[indexPath.row].image.first?.text {
+            
+            AlbumImageDatasource.requestAlbumImage(albumImageName: imageValue, success: { result in
                 DispatchQueue.main.async() {
-                    cell.imageView?.image = UIImage(data: dataResult as! Data)
+                    cell.imageView?.image = UIImage(data: result)
                     cell.setNeedsLayout()
                 }
-            }) { (error) in
+            }) { error in
                 print(error)
             }
         }
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.onAlbumSelectionEvent?(albumList[indexPath.row])
     }
-}
-
-extension AlbumViewCell {
-    
-    
 }

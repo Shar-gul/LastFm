@@ -39,6 +39,7 @@ class AlbumListViewController: UIViewController {
         
         viewModel.onAlbumSelectionEvent = { [weak self] album in
             let detailController = AlbumDetailViewController.init()
+            detailController.viewModel.selectedAlbum = album
             self?.navigationController?.pushViewController(detailController, animated: true)
         }
     }

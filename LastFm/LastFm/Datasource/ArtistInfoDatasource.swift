@@ -1,28 +1,26 @@
 //
-//  AlbumInfoDatasource.swift
+//  ArtistInfoDatasource.swift
 //  LastFm
 //
-//  Created by Tiago Valente on 29/05/2019.
+//  Created by Tiago Valente on 30/05/2019.
 //  Copyright © 2019 Tiago Valente. All rights reserved.
 //
 
 import Foundation
 
-class AlbumInfoDatasource {
-    
+class ArtistInfoDatasource {
+        
     static private let METHOD_KEY = "method"
     static private let ARTIST_KEY = "artist"
     static private let ALBUM_KEY = "album"
     
-    class func requestAlbumInfo(artistName: String,
-                                albumName: String,
-                                success: @escaping (_ success: AlbumInfo) -> Void,
+    class func requestArtistInfo(artistName: String,
+                                success: @escaping (_ success: ArtistInfoResponseArtist) -> Void,
                                 failure: @escaping (String) -> Void) {
         
         let queryItems = [URLQueryItem.init(name: Configurations.API_KEY, value: Configurations.API_KEY_VALUE),
-                          URLQueryItem.init(name: METHOD_KEY, value: "album.getinfo"),
+                          URLQueryItem.init(name: METHOD_KEY, value: "artist.getinfo"),
                           URLQueryItem.init(name: ARTIST_KEY, value: artistName),
-                          URLQueryItem.init(name: ALBUM_KEY, value: albumName),
                           URLQueryItem.init(name: Configurations.FORMAT_KEY, value: Configurations.FORMAT_VALUE)]
         
         guard var urlComp = URLComponents(string: Configurations.endpoint) else {
@@ -31,15 +29,14 @@ class AlbumInfoDatasource {
         }
         urlComp.queryItems = queryItems
         
-        NetworkManager.requestURL(url: urlComp, success: { response in            
+        NetworkManager.requestURL(url: urlComp, success: { response in
             do {
-
                 let string1 = String(data: response as! Data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
                 print(string1)
 
                 let decoder = JSONDecoder()
-                let albumJSON = try decoder.decode(AlbumInfoResponse.self, from: response as! Data)
-                success(albumJSON.album)
+                let artistInfoJSON = try decoder.decode(ArtistInfoResponse.self, from: response as! Data)
+                success(artistInfoJSON.artist)
             } catch _ {
                 do {
                     let decoder = JSONDecoder()
@@ -53,5 +50,4 @@ class AlbumInfoDatasource {
             failure("Error making request")
         }
     }
-    
 }

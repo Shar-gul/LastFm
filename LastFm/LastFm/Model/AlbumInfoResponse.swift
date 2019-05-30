@@ -54,7 +54,7 @@ struct Track: Codable {
 
 struct ArtistInfo: Codable {
     let name: String
-    let mbid: String
+    let mbid: String?
     let url: String
 }
 
